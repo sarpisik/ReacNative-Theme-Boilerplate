@@ -13,6 +13,11 @@ To get started open your command-lien and follow the below steps
 git clone https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git
 ```
 
+Then
+```
+cd ReacNative-Theme-Boilerplate
+```
+
 And
 
 ```
