@@ -5,12 +5,12 @@ I made it as a boilerplate starter app for my projects.
 
 ## Getting Started
 
-To get started "https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git" copy then enter on your command.
+To get started open your command-lien and follow the below steps
 
 ### Installing
 
 ```
-https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git
+git clone https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git
 ```
 
 And
