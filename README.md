@@ -5,7 +5,7 @@ I made it as a boilerplate starter app for my projects.
 
 ## Getting Started
 
-To get started write "https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git" on your command.
+To get started "https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git" copy&enter on your command.
 
 ### Prerequisites
 
