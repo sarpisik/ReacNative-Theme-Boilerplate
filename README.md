@@ -5,15 +5,7 @@ I made it as a boilerplate starter app for my projects.
 
 ## Getting Started
 
-To get started "https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git" copy&enter on your command.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+To get started "https://github.com/sarpisik/ReacNative-Theme-Boilerplate.git" copy then enter on your command.
 
 ### Installing
 
@@ -33,11 +25,9 @@ npm install
 npm start
 ```
 
-You need to use expo scripts. For more [info]()
-
 ## Built With
 
-- [ReactNative-Expo](https://docs.expo.io/versions/latest/) - The web framework used
+- [Expo](https://docs.expo.io/versions/latest/)
 
 ## Dependencies
 
