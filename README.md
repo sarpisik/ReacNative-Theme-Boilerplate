@@ -5,7 +5,7 @@ I made it as a boilerplate starter app for my projects.
 
 ## Getting Started
 
-To get started open your command-lien and follow the below steps
+To get started open your command-line and follow the below steps
 
 ### Installing
 
