@@ -45,66 +45,32 @@ export const WithTheme = WrappedComponent => {
       this.animatedValue.setValue(0)
       Animated.timing(this.animatedValue, {
         toValue: 1,
-        duration: 500
+        duration: 400
         // useNativeDriver: true
       }).start()
     }
 
-    triggerAnimate = theme => {
+    triggerAnimate = (prevColor, nextColor) =>
       this.animatedValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [this.prevTheme.primary, this.props.theme.primary]
+        outputRange: [prevColor, nextColor]
       })
-    }
 
     render() {
-      // const mergedArr = {
-      //   primary: {
-      //     prev: prevTheme.primary,
-      //     next: this.props.theme.primary
-      //   },
-      //   secondary: {
-      //     prev: prevTheme.secondary,
-      //     next: this.props.theme.secondary
-      //   },
-      //   tertiary: {
-      //     prev: prevTheme.tertiary,
-      //     next: this.props.theme.tertiary
-      //   }
-      // }
       const colors = {
         primary: () =>
-          this.animatedValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [this.prevTheme.primary, this.props.theme.primary]
-          }),
+          this.triggerAnimate(this.prevTheme.primary, this.props.theme.primary),
         secondary: () =>
-          this.animatedValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [this.prevTheme.secondary, this.props.theme.secondary]
-          }),
+          this.triggerAnimate(
+            this.prevTheme.secondary,
+            this.props.theme.secondary
+          ),
         tertiary: () =>
-          this.animatedValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [this.prevTheme.tertiary, this.props.theme.tertiary]
-          })
+          this.triggerAnimate(
+            this.prevTheme.tertiary,
+            this.props.theme.tertiary
+          )
       }
-      // const primary = this.animatedValue.interpolate({
-      //   inputRange: [0, 1],
-      //   outputRange: [this.prevTheme.primary, this.props.theme.primary]
-      // })
-      // const secondary = this.animatedValue.interpolate({
-      //   inputRange: [0, 1],
-      //   outputRange: [this.prevTheme.secondary, this.props.theme.secondary]
-      // })
-      // const tertiary = this.animatedValue.interpolate({
-      //   inputRange: [0, 1],
-      //   outputRange: [this.prevTheme.tertiary, this.props.theme.tertiary]
-      // })
-
-      console.log('this.prevTheme ,', this.prevTheme)
-      console.log('this.props.theme ,', this.props.theme)
-
       return <WrappedComponent {...this.props} colors={colors} />
     }
   }

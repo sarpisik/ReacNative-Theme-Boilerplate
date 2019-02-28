@@ -23,7 +23,7 @@ class AnimatedTabNavigationView extends React.Component {
     ) {
       Animated.timing(this.state.selectedIndexAnimated, {
         toValue: this.props.navigation.state.index,
-        duration: 250,
+        duration: 150,
         useNativeDriver: true
       }).start()
     }

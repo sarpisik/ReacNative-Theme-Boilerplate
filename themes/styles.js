@@ -24,7 +24,13 @@ const styles = StyleSheet.create({
     paddingTop: 25
     // width: '100%'
   },
-  headerText: { fontWeight: 'bold', fontSize: 20 }
+  headerText: { fontWeight: 'bold', fontSize: 20 },
+  textCenter: {
+    textAlign: 'center'
+  },
+  verticalCenter: {
+    justifyContent: 'center'
+  }
 })
 
 export default styles

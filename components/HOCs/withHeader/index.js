@@ -41,7 +41,7 @@ export default ({
         theme: { primary, secondary }
       } = this.props
       return (
-        <>
+        <ScreenContainer colors={colors.secondary}>
           <ScreenContainer
             style={styles.headerContainer}
             colors={colors.primary}>
@@ -68,8 +68,10 @@ export default ({
               centerComponent={this.centerComponent(title)}
             /> */}
           </ScreenContainer>
-          <WrappedComponent {...this.props} />
-        </>
+          <ScreenContainer {...styles.verticalCenter}>
+            <WrappedComponent {...this.props} />
+          </ScreenContainer>
+        </ScreenContainer>
       )
     }
   }

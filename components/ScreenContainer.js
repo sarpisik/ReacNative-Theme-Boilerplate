@@ -3,8 +3,7 @@ import { Animated, View } from 'react-native'
 import { styles } from '../themes'
 
 export default ({ colors, children, ...props }) => {
-  console.log('COLOR ,', colors)
-  return (
+  return colors ? (
     <Animated.View
       style={[
         props.style || styles.container,
@@ -12,5 +11,7 @@ export default ({ colors, children, ...props }) => {
       ]}>
       {children}
     </Animated.View>
+  ) : (
+    <View style={[styles.container, { ...props }]}>{children}</View>
   )
 }
