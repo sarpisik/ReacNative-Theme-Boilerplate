@@ -14,9 +14,7 @@ class AnimatedTabNavigationView extends React.Component {
     }
   }
 
-  // Animate from previousy selected index to newly selected index. This is
-  // the most simple way to do this, you might want to control each tab visibility
-  // individually with their own animated value for example.
+  // Animate from previously selected index to newly selected index.
   componentDidUpdate(prevProps) {
     if (
       prevProps.navigation.state.index !== this.props.navigation.state.index
@@ -37,12 +35,8 @@ class AnimatedTabNavigationView extends React.Component {
     const { selectedIndexAnimated } = this.state
     const { index: activeIndex } = this.props.navigation.state
 
+    // Translate animation style
     const containerStyle = {
-      // backgroundColor: '#fff',
-      // opacity: selectedIndexAnimated.interpolate({
-      //   inputRange: [index - 1, index, index + 1],
-      //   outputRange: [0, 1, 0]
-      // }),
       transform: [
         {
           translateX: selectedIndexAnimated.interpolate({
@@ -52,16 +46,6 @@ class AnimatedTabNavigationView extends React.Component {
         }
       ]
     }
-
-    // Opacity is the easiest thing here to animate
-    // let opacity = selectedIndexAnimated.interpolate({
-    //   inputRange: [index - 1, index, index + 1],
-    //   outputRange: [0, 1, 0]
-    // })
-    // let translateX = selectedIndexAnimated.interpolate({
-    //   inputRange: [index - 1, index, index + 1],
-    //   outputRange: [width, 1, width]
-    // })
 
     return (
       <Animated.View

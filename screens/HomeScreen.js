@@ -2,10 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { Button } from 'react-native-elements'
 import { styles } from '../themes'
-
-import { MonoText } from '../components/StyledText'
 import { withHeader, withTheme } from '../components'
-import { ScreenContainer } from '../components'
 
 class HomeScreen extends React.Component {
   changeHandler = type => this.props.changeTheme(type)
@@ -21,7 +18,7 @@ class HomeScreen extends React.Component {
         />
         <Button
           containerStyle={{ margin: 10 }}
-          title="Light"
+          title="Navy"
           onPress={() => this.props.changeTheme('navy')}
         />
         <Button
@@ -35,4 +32,5 @@ class HomeScreen extends React.Component {
 }
 
 const HeaderHomeScreen = withHeader({ title: 'Home' })(HomeScreen)
+
 export default withTheme(HeaderHomeScreen)

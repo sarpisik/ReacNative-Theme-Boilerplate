@@ -1,16 +1,19 @@
 import React from 'react'
 import { Animated, Easing } from 'react-native'
-import {
-  createStackNavigator,
-  createAppContainer,
-  createBottomTabNavigator
-} from 'react-navigation'
-import createAnimatedTabNavigator from './createAnimatedBottomTabNavigator'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import Bar from './NavigationHeader'
-import HomeScreen from '../screens/HomeScreen'
-import SettingsScreen from '../screens/SettingsScreen'
 
+// Navigation Creator & Container
+import { createStackNavigator, createAppContainer } from 'react-navigation'
+// Bottom Tab Bar Creator
+import createAnimatedTabNavigator from './createAnimatedBottomTabNavigator'
+// Redux Injected Bar
+import Bar from './NavigationBottomBar'
+// Bar Icons
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
+// Screens
+import { HomeScreen, SettingsScreen } from '../screens'
+
+// Transition will be used later for stack navigator
 const transitionConfig = () => {
   return {
     transitionSpec: {
@@ -49,7 +52,6 @@ const TabNavigator = createAnimatedTabNavigator(
   },
   {
     initialRouteName: 'Home',
-    // animationEnabled: true,
     tabBarComponent: props => <Bar {...props} />,
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ tintColor }) => {
@@ -66,14 +68,12 @@ export default createAppContainer(
   createStackNavigator(
     {
       Main: TabNavigator
-      // Friends: { screen: Friends }
     },
     {
       initialRouteName: 'Main',
       defaultNavigationOptions: () => ({
         header: null
       })
-      // transitionConfig
     }
   )
 )
